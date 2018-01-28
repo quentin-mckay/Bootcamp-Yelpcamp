@@ -1,0 +1,18 @@
+body {
+    background: lightgray;
+}
+
+.container {
+    margin: 20px auto;
+}
+
+.delete-form {
+    display: inline;
+}
+
+/*it's my own div so doesn't have the default Bootstrap 4 15px left-right padding*/
+#comments-list {
+    background: aliceblue;
+    padding: 20px;
+}
+

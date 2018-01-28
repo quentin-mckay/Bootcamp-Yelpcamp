@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+ 
+<!-- 
+- MUST have navbar-expand-* to make it lay out horizontally
+- use just navbar-expand to keep it horizontal for every size
+- navbar-dark actually controls the text color (makes it light)
+-->
+     <nav class="navbar navbar-expand navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="/">YelpCamp</a>
+        
+        <div class="navbar-nav">
+            
+            <% if (!currentUser) { %>
+            
+                <a class="nav-item nav-link" href="/login">Login</a>
+                <a class="nav-item nav-link" href="/register">Sign Up</a>
+                
+            <% } else { %>
+            
+                <span class="navbar-text">Signed In as <%= currentUser.username %></span>
+                <a class="nav-item nav-link" href="/logout">Logout</a>
+                
+            <% } %>
+        </div>
+        
+    </nav>
+    
+    <div class="container">
+        
+        <% if (error && error.length > 0) { %>    <!-- check if error array has something in it -->
+        
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        
+         <% } %>
+        
+        <% if (success && success.length > 0) { %>
+        
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        
+        <% } %>
+       
+    </div>
+    
